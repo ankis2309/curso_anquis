@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace _01
         {
 
 
-            Console.WriteLine("hola mundo");
+            Console.WriteLine("hola mundo ejecucion");
 
             bool False = false;
             string  Cadena1 = "Cadena de texo";
@@ -43,15 +44,48 @@ namespace _01
                 Console.WriteLine(item, "items de array");
             }
 
+
+            //var RespuestaDeFuncionInterna = FuncionInterna(5);
+            var RespuestaDeClase1 = new Clase1();
+
             Console.WriteLine(ArrayDeInts);
 
             Console.ReadLine();
         }
 
+        internal string FuncionInterna( int numero )
+        {
 
-        internal int Abc(int numero)
+            return "ejecutando la funcion interna: "+ numero;
+        }
+
+        public int FuncionPublica(int numero)
+        {
+            return numero;
+        }
+
+
+        private int FuncionPrivada(int numero)
+        {
+            return numero;
+        }
+
+
+        protected int FuncionProtegida(int numero)
         {
             return numero;
         }
     }
+
+
+
+    public class Clase1
+    {
+            public int RetornaNumeroDemostraion(int numero)
+            {
+                return numero;
+            }
+    }
+
+
 }
