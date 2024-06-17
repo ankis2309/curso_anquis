@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ul>li*6 -->
+    <!-- ul>li{Item $}*6 -->
+   
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+    </ul>
+
+
+    <!-- <div  id="Identificador">adfs sdf asd fa</div> -->
+    <div  id="Identificador"> </div>
+
+    <div  id="Identificador2"> </div>
+  
+    
+<script type="text/javascript">
+
+    console.log("hola mundo  Ankis ");
+
+   // alert("hola Anki, aqui si nos vemos en el DOM");
+    
+   console.log( document.getElementById("Identificador"));
+   
+   document.getElementById("Identificador").innerHTML="<ul>" + "<li>Item 1 js</li>" +"<ul>";
+    document.getElementById("Identificador2").innerHTML=`
+    <ul>
+        ${[1,2,3,4,5,6].map(el=> `<li>Item desde js ${el}</li>` ).join("")}
+    <ul>
+    `;
+
+
+</script>
+</body>
+</html>
