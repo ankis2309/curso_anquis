@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +14,7 @@ namespace _01
         static void Main(string[] args)
         {
 
-
+            //ConstructorBuilder(int id, string data){ }
             Console.WriteLine("hola mundo ejecucion");
 
             bool False = false;
@@ -46,7 +48,10 @@ namespace _01
 
 
             //var RespuestaDeFuncionInterna = FuncionInterna(5);
+            var RespuestaDeFuncionInternaValida = new Program().FuncionInterna(5);
             var RespuestaDeClase1 = new Clase1();
+
+            var RespMetodoDeClase = RespuestaDeClase1.RetornaNumeroDemostraion(1);
 
             Console.WriteLine(ArrayDeInts);
 
@@ -81,11 +86,77 @@ namespace _01
 
     public class Clase1
     {
-            public int RetornaNumeroDemostraion(int numero)
-            {
-                return numero;
-            }
+
+      
+        public int RetornaNumeroDemostraion(int numero)
+        {
+            return numero;
+        }
+
+        public string Propiedad1 { get; set; }
+        public string SaludoInicial { get; set; } = "Hola";
+
+
+        public string Saludo(string name){
+        
+            return this.SaludoInicial+" "+name;
+        }
     }
+
+
+
+    public class Clase3 : Clase1
+    {
+
+        internal int PropiedadDeClase3
+        {
+            get => RetornaNumeroDemostraion(1);
+        }
+
+
+        public string PropiedadCompuesta
+        {
+            get => "Numero: " + PropiedadDeClase3;
+        }
+
+
+    }
+
+
+    public class Clase4 :Clase3
+    {
+
+        public int PropiedadDeclase4
+        {
+            get => PropiedadDeClase3;
+        }
+
+
+        public int PropiedadDeclase4_2 { get; set; }
+    }
+
+
+    public class Clase5
+    {
+
+        public int FuncionPublicaDeClase5(int numero)
+        {
+
+            var InstanciaDeClase4 = new Clase4();
+
+            var MetodoDeInstanciaClase4 = InstanciaDeClase4.PropiedadDeclase4_2;
+            var AccediendoAUnaPropiedadInternal = InstanciaDeClase4.PropiedadDeClase3;
+
+            return numero*MetodoDeInstanciaClase4;
+        }
+
+
+
+
+    }
+
+
+
 
 
 }
