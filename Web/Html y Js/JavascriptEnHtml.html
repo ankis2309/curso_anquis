@@ -4,16 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        h1{
+            background-color:blue !important;
+        }
+
+        .clase1 {
+            background-color: yellow ;
+        }
+
+
+        .container{
+            border: 1px dashed green;
+            background-color: aquamarine;
+            padding: 1rem;
+
+        }
+
+
+        .contenido1{
+            padding: 2rem;
+            background-color: aliceblue;
+        }
+        
+        .container div{
+
+            border: solid 1px red;
+
+        }
+        .container > div{
+
+            border: solid 1px rgb(102, 222, 66);
+            
+        }
+
+
+        #Identificador{
+            color:blueviolet;
+        }
+        </style>
 </head>
+
+
+<h1 class=" clase1"> Titulo h1 </h1>
+<h2 class=" clase2"> Titulo h2 </h2>
+<h3 class=" clase3"> Titulo h3 </h3>
+<h4 class=" clase4"> Titulo h4 </h4>
+<h5 class=" clase5"> Titulo h5 </h5>
+<h6 class=" clase6"> Titulo h6 </h6>
+
+
+<div class="container">
+    solo contanier
+    <div class="contenido1">
+        Container 1 contenido 1
+    </div>
+
+
+    <div>otro div 
+        <div> estoy dentro de otro div </div> 
+    </div>
+
+</div>
+
+
+<div Id="Identificador">
+    <div class="contenido">
+        Container 2 con Identificador
+        
+    </div>
+</div>
 <body>
+
+
+
     <script type="text/javascript">
 
 
          var   Variable1 = null;
          let   Variable2 =  null;
-
          const Variable3  = null;
+        
+        const HtmlCollectionDiv  = document.getElementsByTagName('div');
+        console.log(HtmlCollectionDiv);
+        const ElementByClassName =  document.getElementsByClassName('container');
+        console.log(ElementByClassName, "Elemento encontrado por clase");
 
+        const ElementByClassName2 =  document.getElementsByClassName('container');
+        console.log(ElementByClassName2, "Elemento encontrado por clase 2");
+
+        const ElementByQuerySelector =  document.querySelector('.container .contenido1');
+        console.log(ElementByQuerySelector, "Elemento encontrado por query selector 2");
+
+        const ElementById =  document.getElementById('Identificador');
+        console.log(ElementById, "Elemento encontrado por  Identificador 2");
+
+        const ElementById2 =  document.querySelector('#Identificador');
+        console.log(ElementById2, "Elemento encontrado por  #Identificador 2");
     </script>
 </body>
 </html>
