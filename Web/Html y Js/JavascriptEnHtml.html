@@ -75,10 +75,22 @@
         
     </div>
 </div>
+
+
+<form  style="margin-top: 3rem;"> 
+    <label>Email</label>
+    <input type="email" name="email" id="email">
+    <br>
+    <label>Password</label>
+    <input type="password" name="password" id="password">
+
+
+</form>
+
 <body>
 
-
-
+<!-- Agregar librerías externas -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
 
 
@@ -87,6 +99,7 @@
          const Variable3  = null;
         
         const HtmlCollectionDiv  = document.getElementsByTagName('div');
+
         console.log(HtmlCollectionDiv);
         const ElementByClassName =  document.getElementsByClassName('container');
         console.log(ElementByClassName, "Elemento encontrado por clase");
@@ -102,6 +115,45 @@
 
         const ElementById2 =  document.querySelector('#Identificador');
         console.log(ElementById2, "Elemento encontrado por  #Identificador 2");
+
+        console.log($, "==========Jquery===========");
+
+        const $HtmlCollectionDiv = $("div");
+        console.log( HtmlCollectionDiv, "$ div" );
+        console.log(  $("container") , "container");
+        console.log(  $(".container .contenido1") , ".container .contenido1");
+        console.log(  $("#Identificador") , "#Identificador");
+
+        const $Identificador =  $("#Identificador");
+
+        setTimeout(() => {
+
+            ElementById.style.color ="black"
+
+            setTimeout(() => {
+            ElementById.style.color ="red"
+                
+            }, 2000);
+
+        }, 2000);
+
+        ElementById.addEventListener("click", function(ev){
+
+            console.log(ev);
+            console.log(ev.target);
+
+            setTimeout(() => {
+
+                ev.target.innerHTML = "Guardado";
+                
+                setTimeout(() => {
+                    $Identificador.html("<strong style='color:yellow'> Algo sucedió, revisalo </strong>")
+                }, 2000);
+
+            }, 1000);
+
+        })
+
     </script>
 </body>
 </html>

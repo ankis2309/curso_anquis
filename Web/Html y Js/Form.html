@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="send" method="post">
+        <label>Email</label>
+        <input type="email" name="email" id="email" onkeyup="FillValues(this)" placeholder="Escribe un email válido">
+        <br>
+        <label>Password</label>
+        <input type="password" name="password" id="password" onkeyup="FillValues(this)" placeholder="Pon tun pass">
+        <button type="button" >enviar</button>
+    </form>
+
+    <script>
+
+        let objinputs = {
+            email:null,
+            password: null
+        }
+
+            const FillValues =  function( ev ){
+
+
+                //console.log(ev);//imprime el elemento actual de donde se ejecuta la accion(evento)
+                //console.log(ev.value)
+
+                objinputs[ev.name] =ev.value;
+
+                console.log(objinputs)
+
+            }
+        //Ajax para enviar informacion
+    </script>
+</body>
+</html>
