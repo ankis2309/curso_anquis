@@ -79,29 +79,53 @@
 
 
 
-    <script type="text/javascript">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
 
 
-         var   Variable1 = null;
+
+ /*        var   Variable1 = null;
          let   Variable2 =  null;
-         const Variable3  = null;
+         const Variable3  = null; 
         
         const HtmlCollectionDiv  = document.getElementsByTagName('div');
         console.log(HtmlCollectionDiv);
         const ElementByClassName =  document.getElementsByClassName('container');
-        console.log(ElementByClassName, "Elemento encontrado por clase");
+        console.log(ElementByClassName, "Elemento encontrado por clase"); 
 
         const ElementByClassName2 =  document.getElementsByClassName('container');
-        console.log(ElementByClassName2, "Elemento encontrado por clase 2");
+        console.log(ElementByClassName2, "Elemento encontrado por clase 2"); 
 
-        const ElementByQuerySelector =  document.querySelector('.container .contenido1');
-        console.log(ElementByQuerySelector, "Elemento encontrado por query selector 2");
-
+       const ElementByQuerySelector =  document.querySelector('.container .contenido1');
+        console.log(ElementByQuerySelector, "Elemento encontrado por query selector 2"); 
+ 
         const ElementById =  document.getElementById('Identificador');
         console.log(ElementById, "Elemento encontrado por  Identificador 2");
 
         const ElementById2 =  document.querySelector('#Identificador');
-        console.log(ElementById2, "Elemento encontrado por  #Identificador 2");
-    </script>
+        console.log(ElementById2, "Elemento encontrado por  #Identificador 2");  */
+
+        console.log($('div').text());
+        console.log("Elemento encontrado por clase", $('.container').text());
+        console.log("Elemento encontrado por clase 2", $('.container').html());
+        console.log("Texto del contenido1:", $('.container .contenido1').text());
+        console.log("Elemento encontrado por  Identificador 2", $('Identificador').text());
+        console.log("Elemento encontrado por  #Identificador 2", $('#Identificador').text());
+
+     /*    window.onload = function(){
+            document.querySelectorAll("div")?.forEach(el =>console.log( el ));
+        }
+        //window.onload();
+
+        $(document).ready(function () {
+
+            $('div').each(function () {
+                console.log($(this).html());
+
+            }); 
+
+        
+        });  */ 
+</script>
 </body>
 </html>
